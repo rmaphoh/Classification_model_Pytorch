@@ -213,8 +213,6 @@ def get_args():
                         help='dataset name')
     parser.add_argument( '-v', '--validation', dest='val', type=float, default=5.0,
                         help='Percent of the data that is used as validation (0-100)')
-    parser.add_argument( '-t', '--task_name', dest='task', type=str,
-                        help='The task name')
     parser.add_argument( '-r', '--round', dest='round', type=int, 
                         help='Number of round')   
     parser.add_argument( '-ms', '--model_structure', dest='model_structure', type=str, 

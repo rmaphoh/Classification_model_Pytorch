@@ -110,7 +110,10 @@ def train_net(model_fl,
 
                         optimizer.zero_grad()
 
-                        prediction = model_fl(imgs)
+                        if args.model_structure == 'inceptionv3':
+                            prediction, _ = model_fl(imgs)
+                        else:
+                            prediction = model_fl(imgs)
 
                         prediction_softmax = nn.Softmax(dim=1)(prediction)
                         _,prediction_decode = torch.max(prediction_softmax, 1)
@@ -151,7 +154,10 @@ def train_net(model_fl,
 
                             optimizer.zero_grad()
 
-                            prediction = model_fl(imgs)
+                            if args.model_structure == 'inceptionv3':
+                                prediction, _ = model_fl(imgs)
+                            else:
+                                prediction = model_fl(imgs)
 
                             prediction_softmax = nn.Softmax(dim=1)(prediction)
                             _,prediction_decode = torch.max(prediction_softmax, 1)

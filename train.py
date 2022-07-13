@@ -74,7 +74,7 @@ def train_net(model_fl,
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', factor=0.5, patience=5)
     
 
-    if n_classes > 2:
+    if n_classes > 1:
         L_class_CE = nn.CrossEntropyLoss()
     else:
         L_class_CE = nn.BCEWithLogitsLoss()
